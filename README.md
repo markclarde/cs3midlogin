@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# act5
+
+# CS3MidLogin
 
 A new Flutter project.
 
@@ -16,5 +16,5 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 =======
-# elective-3_flutter
+# CS3MidLogin
 >>>>>>> 1591408ed8e0ec5f241d5a594259bd75ecb5ee9e
