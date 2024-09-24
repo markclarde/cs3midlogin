@@ -31,7 +31,7 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        double maxWidth = 325;
+        double maxWidth = 300;
         double containerWidth = constraints.maxWidth < maxWidth ? constraints.maxWidth : maxWidth;
 
         return Scaffold(
@@ -45,17 +45,17 @@ class WelcomeScreen extends StatelessWidget {
                   // Top image (replace with your asset image)
                   Image.network(
                     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAs_TDUTeHiZQ1tqLJlvItaBOjcmRTeoSbHw&s',
-                    height: 200,
+                    height: 175,
                   ),
 
-                  const SizedBox(height: 75),
+                  const SizedBox(height: 50),
 
                   // Hello Text
                   const Text(
                     'Hello',
                     style: TextStyle(
                       fontSize: 32,
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w900,
                       color: Colors.black,
                     ),
                   ),
@@ -72,7 +72,9 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+
                   const SizedBox(height: 40),
+
                   // Login Button
                   SizedBox(
                     width: maxWidth,
@@ -81,7 +83,7 @@ class WelcomeScreen extends StatelessWidget {
                       children: [
                         Expanded(
                           child: SizedBox(
-                            height: 50, // Ensure same height as the first button
+                            height: 50,
                             width: maxWidth,
                             child: TextButton(
                               onPressed: () {
@@ -94,19 +96,19 @@ class WelcomeScreen extends StatelessWidget {
                                 );
                               },
                               style: TextButton.styleFrom(
-                                foregroundColor: Colors.white, // Text color same as the first
-                                backgroundColor: const Color(0xFF6249E9), // White background
-                                side: const BorderSide(color: Color(0xFF6249E9)), // Add border
+                                foregroundColor: Colors.white,
+                                backgroundColor: const Color(0xFF6249E9),
+                                side: const BorderSide(color: Color(0xFF6249E9)),
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30), // Rounded corners
+                                  borderRadius: BorderRadius.circular(30),
                                 ),
                               ),
                               child: const Text(
                                 'Login', 
                                 style: TextStyle(
-                                  color: Colors.white, // Same color as the border
-                                  fontWeight: FontWeight.w700, // Same font weight
-                                  fontSize: 14, // Match font size if needed
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 18,
                                 ),
                               ),
                             ),
@@ -126,7 +128,7 @@ class WelcomeScreen extends StatelessWidget {
                       children: [
                         Expanded(
                           child: SizedBox(
-                            height: 50, // Ensure same height as the first button
+                            height: 50,
                             width: maxWidth,
                             child: TextButton(
                               onPressed: () {
@@ -139,19 +141,19 @@ class WelcomeScreen extends StatelessWidget {
                                 );
                               },
                               style: TextButton.styleFrom(
-                                foregroundColor: const Color(0xFF6249E9), // Text color same as the first
-                                backgroundColor: Colors.white, // White background
-                                side: const BorderSide(color: Color(0xFF6249E9)), // Add border
+                                foregroundColor: const Color(0xFF6249E9),
+                                backgroundColor: Colors.white,
+                                side: const BorderSide(color: Color(0xFF6249E9)),
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30), // Rounded corners
+                                  borderRadius: BorderRadius.circular(30),
                                 ),
                               ),
                               child: const Text(
                                 'Sign Up', 
                                 style: TextStyle(
-                                  color: Color(0xFF6249E9), // Same color as the border
-                                  fontWeight: FontWeight.w700, // Same font weight
-                                  fontSize: 14, // Match font size if needed
+                                  color: Color(0xFF6249E9),
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 18,
                                 ),
                               ),
                             ),
@@ -162,6 +164,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
 
                   const SizedBox(height: 40),
+
                   // Sign up using text
                   const Text(
                     'Sign up using:',
@@ -171,7 +174,9 @@ class WelcomeScreen extends StatelessWidget {
                       fontSize: 12,
                     ),
                   ),
+
                   const SizedBox(height: 5),
+
                   // Social buttons (replace icons with actual logos)
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -180,12 +185,12 @@ class WelcomeScreen extends StatelessWidget {
                       Container(
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Color(0xFF1877F2), // Facebook color
+                          color: Color(0xFF1877F2),
                         ),
                         child: IconButton(
                           icon: const FaIcon(
                             FontAwesomeIcons.facebook,
-                            color: Colors.white, // Icon color
+                            color: Colors.white,
                             size: 20,
                           ),
                           onPressed: () {
@@ -193,18 +198,19 @@ class WelcomeScreen extends StatelessWidget {
                           },
                         ),
                       ),
-                      
+
+                      const SizedBox(width: 10),
+
                       // Google Plus Button
-                      const SizedBox(width: 10), // Add spacing between icons
                       Container(
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Color(0xFFDB4437), // Google Plus color
+                          color: Color(0xFFDB4437),
                         ),
                         child: IconButton(
                           icon: const FaIcon(
                             FontAwesomeIcons.googlePlus,
-                            color: Colors.white, // Icon color
+                            color: Colors.white,
                             size: 20,
                           ),
                           onPressed: () {
@@ -218,18 +224,19 @@ class WelcomeScreen extends StatelessWidget {
                           },
                         ),
                       ),
-                      
+
+                      const SizedBox(width: 10),
+
                       // LinkedIn Button
-                      const SizedBox(width: 10), // Add spacing between icons
                       Container(
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Color(0xFF0077B5), // LinkedIn color
+                          color: Color(0xFF0077B5),
                         ),
                         child: IconButton(
                           icon: const FaIcon(
                             FontAwesomeIcons.linkedin,
-                            color: Colors.white, // Icon color
+                            color: Colors.white,
                             size: 20,
                           ),
                           onPressed: () {

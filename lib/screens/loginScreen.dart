@@ -1,4 +1,3 @@
-import 'package:act5/main.dart';
 import 'package:act5/screens/signUpScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -9,40 +8,40 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        double maxWidth = 600;
-        double containerWidth = constraints.maxWidth < maxWidth ? constraints.maxWidth : maxWidth;
+        double maxWidth = 400; // Reduced maxWidth
+        // double containerWidth = constraints.maxWidth < maxWidth ? constraints.maxWidth : maxWidth;
 
         return Scaffold(
           backgroundColor: Colors.white,
           body: Center(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50),
+              padding: const EdgeInsets.all(40.0), // Reduced padding Reduced padding
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Image.network(
                     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAs_TDUTeHiZQ1tqLJlvItaBOjcmRTeoSbHw&s',
-                    height: 200,
+                    height: 150, // Reduced image height
                   ),
                   const SizedBox(height: 10),
                   const Text(
                     'Login',
                     style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 30, // Reduced font size
                       fontWeight: FontWeight.bold
                     ),
                   ),
 
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 15), // Adjusted spacing
 
                   SizedBox(
                     width: maxWidth,
                     child: Container(
-                      margin: const EdgeInsets.fromLTRB(15, 0, 10, 0),
+                      margin: const EdgeInsets.fromLTRB(10, 0, 10, 0), // Adjusted margin
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text("Name", style: TextStyle(fontWeight: FontWeight.w500)),
+                          Text("Name", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14)), // Reduced font size
                         ],
                       ),
                     ),
@@ -52,27 +51,28 @@ class LoginScreen extends StatelessWidget {
 
                   SizedBox(
                     width: maxWidth,
+                    height: 50,
                     child: TextField(
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(12), // Reduced corner radius
                         ),
                       ),
                     ),
                   ),
 
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 15), // Adjusted spacing
 
                   SizedBox(
                     width: maxWidth,
                     child: Container(
-                      margin: const EdgeInsets.fromLTRB(15, 0, 10, 0),
+                      margin: const EdgeInsets.fromLTRB(10, 0, 10, 0), // Adjusted margin
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text("Email", style: TextStyle(fontWeight: FontWeight.w500)),
+                          Text("Email", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14)), // Reduced font size
                         ],
                       ),
                     ),
@@ -82,27 +82,28 @@ class LoginScreen extends StatelessWidget {
 
                   SizedBox(
                     width: maxWidth,
+                    height: 50,
                     child: TextField(
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(12), // Reduced corner radius
                         ),
                       ),
                     ),
                   ),
 
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 15), // Adjusted spacing
 
                   SizedBox(
                     width: maxWidth,
                     child: Container(
-                      margin: const EdgeInsets.fromLTRB(15, 0, 10, 0),
+                      margin: const EdgeInsets.fromLTRB(10, 0, 10, 0), // Adjusted margin
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text("Password", style: TextStyle(fontWeight: FontWeight.w500)),
+                          Text("Password", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14)), // Reduced font size
                         ],
                       ),
                     ),
@@ -112,12 +113,13 @@ class LoginScreen extends StatelessWidget {
 
                   SizedBox(
                     width: maxWidth,
+                    height: 50,
                     child: TextField(
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(12), // Reduced corner radius
                         ),
                       ),
                     ),
@@ -128,27 +130,27 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     width: maxWidth,
                     child: Container(
-                      margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                      margin: const EdgeInsets.fromLTRB(10, 0, 10, 0), // Adjusted margin
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text("Forgot Password?", style: TextStyle(fontSize: 12),),
+                          Text("Forgot Password?", style: TextStyle(fontSize: 11),), // Reduced font size
                         ],
                       ),
                     ),
                   ),
 
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 25), // Adjusted spacing
 
-                  // Sign Up Button
+                  // Sign In Button
                   SizedBox(
-                    width: 350,
+                    width: 300, // Reduced width
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Expanded(
                           child: SizedBox(
-                            height: 65,
+                            height: 50, // Reduced button height
                             width: maxWidth,
                             child: TextButton(
                               onPressed: () {},
@@ -156,32 +158,47 @@ class LoginScreen extends StatelessWidget {
                                 foregroundColor: Colors.white, // Button color
                                 backgroundColor: const Color(0xFF6249E9), // Text color
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30), // Rounded corners
+                                  borderRadius: BorderRadius.circular(25), // Slightly reduced corners
                                 ),// Full-width button
                               ),
-                              child: const Text('Sign In', style: TextStyle(fontWeight: FontWeight.w500)),
+                              child: const Text('Sign In', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16)), // Reduced font size
                             ),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 5),
+
+                  const SizedBox(height: 10),
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text("Doesn't have an account?", style: TextStyle(fontSize: 12)),
+                      const Text(
+                        "Doesn't have an account?", 
+                        style: TextStyle(fontSize: 11),
+                      ),
+                      const SizedBox(width: 2),
                       TextButton(
                         onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                            builder: (context) => const SignUpScreen(),
+                              builder: (context) => const SignUpScreen(),
                             ),
                           );
                         },
-                        child: const Text("Sign up", style: TextStyle(fontSize: 12)),
-                      )
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero, // Removes padding
+                          minimumSize: const Size(0, 0), // Removes minimum size
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap, // Reduces the touch target size
+                          splashFactory: NoSplash.splashFactory, // Removes the splash effect
+                        ),
+                        child: const Text(
+                          "Sign up", 
+                          style: TextStyle(fontSize: 11), // Customize text style
+                        ),
+                      ),
                     ],
                   )
                 ],
