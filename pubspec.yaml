@@ -1,4 +1,4 @@
-name: act5
+name: CS3MidLogin
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -37,10 +37,31 @@ dependencies:
   cupertino_icons: ^1.0.6
   awesome_icons: ^1.1.0
   font_awesome_flutter: ^10.7.0
+  flutter_launcher_icons: ^0.14.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/LOGO - Mr. Jello.png" # Path to your icon image
+  min_sdk_android: 21 # Minimum SDK version for Android
+  adaptive_icon_background: "assets/icon/Background Logo [Mr. Jello].png"
+  adaptive_icon_foreground: "assets/icon/Foreground Logo [Mr. Jello].png"
+  web:
+    generate: true
+    image_path: "assets/icon/LOGO - Mr. Jello.png"
+    background_color: "#FF0000" # Background color for web
+    theme_color: "#FF0000" # Theme color for web
+  windows:
+    generate: true
+    image_path: "assets/icon/LOGO - Mr. Jello.png"
+    icon_size: 48 # Size of the icon for Windows
+  macos:
+    generate: true
+    image_path: "assets/icon/LOGO - Mr. Jello.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -54,7 +75,10 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
+  assets:
+    - assets/icon/Background Logo [Mr. Jello].png
+    - assets/icon/Foreground Logo [Mr. Jello].png
+    - assets/icon/LOGO - Mr. Jello.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

@@ -1,4 +1,4 @@
-import 'package:act5/screens/signUpScreen.dart';
+import 'package:CS3MidLogin/screens/signUpScreen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -19,11 +19,12 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Image.network(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAs_TDUTeHiZQ1tqLJlvItaBOjcmRTeoSbHw&s',
-                    height: 150, // Reduced image height
+                  Image.asset(
+                    'assets/icon/LOGO - Mr. Jello.png',
+                    height: 100,
+                    width: 500,
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 5),
                   const Text(
                     'Login',
                     style: TextStyle(

@@ -1,4 +1,4 @@
-import 'package:act5/screens/loginScreen.dart';
+import 'package:CS3MidLogin/screens/loginScreen.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -22,12 +22,12 @@ class SignUpScreen extends StatelessWidget {
                     const Text(
                       'Sign Up',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 35,
                         fontWeight: FontWeight.bold
                       ),
                     ),
                     
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 29),
 
                     // Row for Firstname and Lastname
                     SizedBox(

@@ -32,7 +32,7 @@ class WelcomeScreen extends StatelessWidget {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         double maxWidth = 300;
-        double containerWidth = constraints.maxWidth < maxWidth ? constraints.maxWidth : maxWidth;
+        // double containerWidth = constraints.maxWidth < maxWidth ? constraints.maxWidth : maxWidth;
 
         return Scaffold(
           backgroundColor: Colors.white, // Background color
@@ -43,12 +43,13 @@ class WelcomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   // Top image (replace with your asset image)
-                  Image.network(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAs_TDUTeHiZQ1tqLJlvItaBOjcmRTeoSbHw&s',
-                    height: 175,
+                  Image.asset(
+                    'assets/icon/LOGO - Mr. Jello.png',
+                    height: 200,
+                    width: 500,
                   ),
 
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 5),
 
                   // Hello Text
                   const Text(
@@ -64,7 +65,7 @@ class WelcomeScreen extends StatelessWidget {
                   SizedBox(
                     width: maxWidth,
                     child: const Text(
-                      'Welcome to ToDo App, where you manage your daily tasks',
+                      'Welcome to MR.JELLO App, where you manage your daily tasks',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 16,
