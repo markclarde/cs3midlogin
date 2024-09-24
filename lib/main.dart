@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'screens/loginScreen.dart';
+import 'screens/signUpScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,88 +13,238 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Navigation Example',
+      debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => const HomePage(),
-        '/pageOne': (context) => const PageOne(),
-        '/pageTwo': (context) => const PageTwo(),
+        '/': (context) => const WelcomeScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/sign-up': (context) => const SignUpScreen(),
       },
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Page'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/pageOne');
-              },
-              child: const Text('Go to Page One'),
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        double maxWidth = 325;
+        double containerWidth = constraints.maxWidth < maxWidth ? constraints.maxWidth : maxWidth;
+
+        return Scaffold(
+          backgroundColor: Colors.white, // Background color
+          body: Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  // Top image (replace with your asset image)
+                  Image.network(
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAs_TDUTeHiZQ1tqLJlvItaBOjcmRTeoSbHw&s',
+                    height: 200,
+                  ),
+
+                  const SizedBox(height: 75),
+
+                  // Hello Text
+                  const Text(
+                    'Hello',
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.black,
+                    ),
+                  ),
+
+                  // Welcome message
+                  SizedBox(
+                    width: maxWidth,
+                    child: const Text(
+                      'Welcome to ToDo App, where you manage your daily tasks',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 40),
+                  // Login Button
+                  SizedBox(
+                    width: maxWidth,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Expanded(
+                          child: SizedBox(
+                            height: 50, // Ensure same height as the first button
+                            width: maxWidth,
+                            child: TextButton(
+                              onPressed: () {
+                                // Navigate to the LoginScreen
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const LoginScreen(),
+                                  ),
+                                );
+                              },
+                              style: TextButton.styleFrom(
+                                foregroundColor: Colors.white, // Text color same as the first
+                                backgroundColor: const Color(0xFF6249E9), // White background
+                                side: const BorderSide(color: Color(0xFF6249E9)), // Add border
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30), // Rounded corners
+                                ),
+                              ),
+                              child: const Text(
+                                'Login', 
+                                style: TextStyle(
+                                  color: Colors.white, // Same color as the border
+                                  fontWeight: FontWeight.w700, // Same font weight
+                                  fontSize: 14, // Match font size if needed
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(height: 20),
+
+                  // Sign Up Button
+                  SizedBox(
+                    width: maxWidth,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Expanded(
+                          child: SizedBox(
+                            height: 50, // Ensure same height as the first button
+                            width: maxWidth,
+                            child: TextButton(
+                              onPressed: () {
+                                // Navigate to the SignUpScreen
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const SignUpScreen(),
+                                  ),
+                                );
+                              },
+                              style: TextButton.styleFrom(
+                                foregroundColor: const Color(0xFF6249E9), // Text color same as the first
+                                backgroundColor: Colors.white, // White background
+                                side: const BorderSide(color: Color(0xFF6249E9)), // Add border
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30), // Rounded corners
+                                ),
+                              ),
+                              child: const Text(
+                                'Sign Up', 
+                                style: TextStyle(
+                                  color: Color(0xFF6249E9), // Same color as the border
+                                  fontWeight: FontWeight.w700, // Same font weight
+                                  fontSize: 14, // Match font size if needed
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(height: 40),
+                  // Sign up using text
+                  const Text(
+                    'Sign up using:',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  // Social buttons (replace icons with actual logos)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // Facebook Button
+                      Container(
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color(0xFF1877F2), // Facebook color
+                        ),
+                        child: IconButton(
+                          icon: const FaIcon(
+                            FontAwesomeIcons.facebook,
+                            color: Colors.white, // Icon color
+                            size: 20,
+                          ),
+                          onPressed: () {
+                            // Add your functionality here
+                          },
+                        ),
+                      ),
+                      
+                      // Google Plus Button
+                      const SizedBox(width: 10), // Add spacing between icons
+                      Container(
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color(0xFFDB4437), // Google Plus color
+                        ),
+                        child: IconButton(
+                          icon: const FaIcon(
+                            FontAwesomeIcons.googlePlus,
+                            color: Colors.white, // Icon color
+                            size: 20,
+                          ),
+                          onPressed: () {
+                            // Navigate to the LoginScreen
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LoginScreen(),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                      
+                      // LinkedIn Button
+                      const SizedBox(width: 10), // Add spacing between icons
+                      Container(
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color(0xFF0077B5), // LinkedIn color
+                        ),
+                        child: IconButton(
+                          icon: const FaIcon(
+                            FontAwesomeIcons.linkedin,
+                            color: Colors.white, // Icon color
+                            size: 20,
+                          ),
+                          onPressed: () {
+                            // Add your functionality here
+                          },
+                        ),
+                      ),
+                    ],
+                  )
+                ],  
+              ),
             ),
-            const SizedBox(width: 200, height: 500,),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/pageTwo');
-              },
-              child: const Text('Go to Page Two'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class PageOne extends StatelessWidget {
-  const PageOne({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Page One'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Back to Home'),
-        ),
-      ),
-    );
-  }
-}
-
-class PageTwo extends StatelessWidget {
-  const PageTwo({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Page Two'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Back to Home'),
-        ),
-      ),
+          ),
+        );
+      }
     );
   }
 }
