@@ -200,7 +200,9 @@ class SignUpScreen extends StatelessWidget {
                               height: 50,
                               width: maxWidth,
                               child: TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+
+                                },
                                 style: TextButton.styleFrom(
                                   foregroundColor: Colors.white,
                                   backgroundColor: const Color(0xFF6249E9),

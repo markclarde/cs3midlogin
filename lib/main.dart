@@ -1,3 +1,4 @@
+import 'package:CS3MidLogin/screens/homeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'screens/loginScreen.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const WelcomeScreen(),
         '/login': (context) => const LoginScreen(),
         '/sign-up': (context) => const SignUpScreen(),
+        '/home': (context) => const HomeScreen(),
       },
     );
   }
@@ -219,7 +221,7 @@ class WelcomeScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const LoginScreen(),
+                                builder: (context) => const HomeScreen(),
                               ),
                             );
                           },

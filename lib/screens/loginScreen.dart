@@ -1,3 +1,4 @@
+import 'package:CS3MidLogin/screens/homeScreen.dart';
 import 'package:CS3MidLogin/screens/signUpScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -154,7 +155,15 @@ class LoginScreen extends StatelessWidget {
                             height: 50, // Reduced button height
                             width: maxWidth,
                             child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                // Navigate to the LoginScreen
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const HomeScreen(),
+                                  ),
+                                );
+                              },
                               style: TextButton.styleFrom(
                                 foregroundColor: Colors.white, // Button color
                                 backgroundColor: const Color(0xFF6249E9), // Text color
