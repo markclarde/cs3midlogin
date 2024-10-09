@@ -36,23 +36,39 @@ class _PostListScreenState extends State<PostListScreen> {
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 final post = snapshot.data![index];
-                return Card(
-                  margin: const EdgeInsets.all(10),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          post.title,
-                          style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                return Container(
+                  width: MediaQuery.of(context).size.width * 0.8, // Use 80% of screen width
+                  margin: const EdgeInsets.all(8), // Adjusted margin
+                  child: Card(
+                    elevation: 2, // Reduced elevation for a flatter appearance
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0), // Adjusted padding
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            post.title,
+                            style: const TextStyle(
+                              fontSize: 16, // Reduced font size for title
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(post.content),
-                      ],
+                          const SizedBox(height: 5),
+                          Text(
+                            post.dateGmt, // Display the date_gmt
+                            style: const TextStyle(
+                              fontSize: 10, // Reduced font size for date
+                              color: Colors.grey,
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            post.excerpt, // Display the excerpt
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis, // Optional: Limit lines
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );
