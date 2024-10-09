@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'screens/loginScreen.dart';
 import 'screens/signUpScreen.dart';
+import 'screens/post_list_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginScreen(),
         '/sign-up': (context) => const SignUpScreen(),
         '/home': (context) => const HomeScreen(),
+        '/posts': (context) => const PostListScreen(),
       },
     );
   }

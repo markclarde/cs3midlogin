@@ -1,6 +1,5 @@
-import 'package:CS3MidLogin/main.dart';
-import 'package:CS3MidLogin/screens/signUpScreen.dart';
 import 'package:flutter/material.dart';
+import 'post_list_screen.dart'; // Add this import
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,13 +9,12 @@ class HomeScreen extends StatelessWidget {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         double maxWidth = 400; // Reduced maxWidth
-        // double containerWidth = constraints.maxWidth < maxWidth ? constraints.maxWidth : maxWidth;
 
         return Scaffold(
           backgroundColor: Colors.white,
           body: Center(
             child: Padding(
-              padding: const EdgeInsets.all(40.0), // Reduced padding Reduced padding
+              padding: const EdgeInsets.all(40.0), // Reduced padding
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -36,7 +34,7 @@ class HomeScreen extends StatelessWidget {
 
                   SizedBox(height: 50,),
 
-                  // Logout
+                  // View Posts
                   SizedBox(
                     width: 300,
                     child: Row(
@@ -48,14 +46,8 @@ class HomeScreen extends StatelessWidget {
                             width: maxWidth,
                             child: TextButton(
                               onPressed: () {
-                              // Navigate to the LoginScreen
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const WelcomeScreen(),
-                                ),
-                              );
-                            },
+                                Navigator.pushNamed(context, '/posts'); // Navigate to PostListScreen
+                              },
                               style: TextButton.styleFrom(
                                 foregroundColor: Colors.white,
                                 backgroundColor: const Color(0xFF6249E9),
@@ -63,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(25),
                                 ),
                               ),
-                              child: const Text('Logout', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16)),
+                              child: const Text('View Posts', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16)),
                             ),
                           ),
                         ),
