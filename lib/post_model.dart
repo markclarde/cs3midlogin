@@ -1,8 +1,8 @@
 class Post {
   final int id;
   final String title;
-  final String excerpt; // Change this to store the excerpt
-  final String dateGmt; // New field for date_gmt
+  final String excerpt;
+  final String dateGmt;
 
   Post({
     required this.id,
@@ -15,8 +15,13 @@ class Post {
     return Post(
       id: json['id'],
       title: json['title']['rendered'],
-      excerpt: json['excerpt']['rendered'], // Extract the excerpt
-      dateGmt: json['date_gmt'], // Extract the date_gmt
+      excerpt:
+          _stripHtml(json['excerpt']['rendered']), // Strip HTML from excerpt
+      dateGmt: json['date_gmt'],
     );
+  }
+
+  static String _stripHtml(String html) {
+    return html.replaceAll(RegExp(r'<[^>]*>'), ''); // Remove HTML tags
   }
 }
