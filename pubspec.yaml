@@ -43,6 +43,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   dio: ^5.0.9
+  html: ^0.15.0
+  intl: ^0.17.0
 
 flutter_launcher_icons:
   android: true

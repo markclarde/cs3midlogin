@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'post_model.dart';
+import '../models/post_model.dart';
 
 class ApiService {
   final String url = 'https://www.ipophil.gov.ph/wp-json/wp/v2/posts';

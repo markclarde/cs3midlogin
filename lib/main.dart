@@ -1,9 +1,9 @@
 import 'package:CS3MidLogin/screens/homeScreen.dart';
+import 'package:CS3MidLogin/screens/post_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'screens/loginScreen.dart';
 import 'screens/signUpScreen.dart';
-import 'screens/post_list_screen.dart';
 
 void main() {
   runApp(const MyApp());
