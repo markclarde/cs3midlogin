@@ -44,16 +44,19 @@ class _PostListScreenState extends State<PostListScreen> {
                   child: Container(
                     width: MediaQuery.of(context).size.width < 600
                         ? double.infinity // Full width for small screens (mobile)
-                        : 600, // Default width for larger screens (e.g., tablets, desktops)
-                    child: ListView.builder(
-                      itemCount: snapshot.data!.length,
-                      itemBuilder: (context, index) {
-                        final post = snapshot.data![index];
-                        return Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0), // Add spacing between cards
-                          child: PostCard(post: post), // Reusable PostCard widget
-                        );
-                      },
+                        : 450, // Default width for larger screens (e.g., tablets, desktops)
+                    child: ScrollConfiguration(
+                      behavior: ScrollBehavior().copyWith(overscroll: false, scrollbars: false), // Hide scrollbars
+                      child: ListView.builder(
+                        itemCount: snapshot.data!.length,
+                        itemBuilder: (context, index) {
+                          final post = snapshot.data![index];
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0), // Add spacing between cards
+                            child: PostCard(post: post), // Reusable PostCard widget
+                          );
+                        },
+                      ),
                     ),
                   ),
                 );
